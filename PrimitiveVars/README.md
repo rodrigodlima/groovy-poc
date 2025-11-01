@@ -1,0 +1,1 @@
+Variables of primitive types are those that store simpler or more basic information, in addition to making method calls. There are no primitive types in Groovy; that is, all variables are objects, even literal values ​​written directly in the code such as, for example, true, false, 10.
