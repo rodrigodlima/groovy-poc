@@ -1,11 +1,10 @@
-// EXAMPLE 1: Basic try-catch applied to the original code
 println("===== EXAMPLE 1: Basic Error Handling =====\n")
 
 passingGrade = 7
 students = [
     [name: "Rodrigo", grade1: 10, grade2: 10],
     [name: "Quelen", grade1: 7, grade2: 5],
-    [name: "John", grade1: 8] // Missing grade2 - will cause error
+    [name: "John", grade1: 8] 
 ]
 
 for (student in students) {
@@ -24,13 +23,12 @@ for (student in students) {
     }
 }
 
-// EXAMPLE 2: Try-catch with different exception types
 println("\n\n===== EXAMPLE 2: Specific Exception Handling =====\n")
 
 students2 = [
     [name: "Maria", grade1: 10, grade2: 8],
-    [name: "Peter", grade1: "invalid", grade2: 7], // Invalid grade
-    [name: "Ana"] // No grades
+    [name: "Peter", grade1: "invalid", grade2: 7], 
+    [name: "Ana"]
 ]
 
 for (student in students2) {
@@ -53,7 +51,7 @@ for (student in students2) {
     println()
 }
 
-// EXAMPLE 3: Try-catch with finally
+
 println("\n\n===== EXAMPLE 3: With Finally Block (Always Executes) =====\n")
 
 int processedStudents = 0
@@ -81,7 +79,6 @@ for (student in students3) {
         studentsWithError++
 
     } finally {
-        // This block ALWAYS executes, with or without error
         println("Finishing processing of ${student.name}")
         println()
     }
@@ -91,7 +88,6 @@ println("===== SUMMARY =====")
 println("Students processed successfully: ${processedStudents}")
 println("Students with errors: ${studentsWithError}")
 
-// EXAMPLE 4: Preventive validation (better than try-catch when possible)
 println("\n\n===== EXAMPLE 4: Preventive Validation (Best Practice) =====\n")
 
 students4 = [
@@ -103,7 +99,6 @@ students4 = [
 for (student in students4) {
     println("========== Result ==========")
 
-    // Validate before using
     if (!student.containsKey('grade1') || !student.containsKey('grade2')) {
         println("WARNING: Student ${student.name} has incomplete grades. Skipping...")
         println()
@@ -130,7 +125,6 @@ for (student in students4) {
     println()
 }
 
-// EXAMPLE 5: Try-catch with throw (custom exceptions)
 println("\n\n===== EXAMPLE 5: Throwing Custom Exceptions =====\n")
 
 def calculateAverage(student) {
@@ -147,7 +141,7 @@ def calculateAverage(student) {
 
 students5 = [
     [name: "Sandra", grade1: 8, grade2: 9],
-    [name: "Roberto", grade1: 15, grade2: 7] // Invalid grade
+    [name: "Roberto", grade1: 15, grade2: 7] 
 ]
 
 for (student in students5) {
@@ -168,7 +162,6 @@ for (student in students5) {
     println()
 }
 
-// EXAMPLE 6: Division by zero handling
 println("\n\n===== EXAMPLE 6: Division by Zero =====\n")
 
 testCases = [
@@ -186,7 +179,6 @@ for (testCase in testCases) {
     }
 }
 
-// EXAMPLE 7: Multiple catch blocks with logging
 println("\n\n===== EXAMPLE 7: Comprehensive Error Handling =====\n")
 
 students6 = [
@@ -199,15 +191,12 @@ for (student in students6) {
     try {
         println("========== Processing ${student.name} ==========")
 
-        // Validate data exists
         if (!student.containsKey('grade1') || !student.containsKey('grade2')) {
             throw new IllegalStateException("Missing required fields")
         }
 
-        // Calculate average
         average = (student.grade1 + student.grade2) / 2
 
-        // Determine result
         status = average >= passingGrade ? "PASSED" : "FAILED"
         println("Student: ${student.name}")
         println("Average: ${average}")
