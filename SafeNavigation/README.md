@@ -1,0 +1,1 @@
+The safe navigation operator ?. in Groovy allows you to safely access properties and methods on potentially null objects without causing a NullPointerException.
