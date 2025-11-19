@@ -1,0 +1,1 @@
+Groovy allows you to set default values for method parameters, which makes methods more flexible and reduces the need to overload them for different use cases.
