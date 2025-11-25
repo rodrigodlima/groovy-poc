@@ -1,0 +1,1 @@
+Here’s a demonstration of how Groovy automatically generates getter and setter methods for class properties. You don’t need to write these methods manually, as Groovy provides them for you.
